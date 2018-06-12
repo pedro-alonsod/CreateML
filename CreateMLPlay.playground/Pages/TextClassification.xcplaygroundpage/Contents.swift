@@ -10,6 +10,8 @@ let spamClassifier = try MLTextClassifier(trainingData: trainingData, textColumn
 //Print metrics
 let trainingAccuracy = (1.0 - spamClassifier.trainingMetrics.classificationError) * 100
 let validationAccuracy = (1.0 - spamClassifier.validationMetrics.classificationError) * 100
+let model = spamClassifier.model.modelDescription
+model.debugDescription
 //3
 //Evaluate model
 let evaluationMetrics = spamClassifier.evaluation(on: testingData)
